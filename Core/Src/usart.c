@@ -21,9 +21,7 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-static uint8_t rxLen = 0;
-static uint8_t rxBuf[256];
-static uint8_t rxEndFlag = 0;
+
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -234,16 +232,5 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
-uint8_t getRxEndFlag(void)
-{
-	return rxEndFlag;
-}
-uint8_t* getRxBuf(void)
-{
-	return rxBuf;
-}
-void setRxEndFlag(uint8_t value)
-{
-	rxEndFlag = value;
-}
+
 /* USER CODE END 1 */

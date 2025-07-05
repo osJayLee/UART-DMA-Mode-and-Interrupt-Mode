@@ -29,7 +29,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-// 在main.h中定义宏，切换接收模式
+
 #define USE_DMA_RECEIVE  1  // 1=DMA模式，0=中断模式
 
 #if USE_DMA_RECEIVE
@@ -52,7 +52,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-int fputc(int ch,FILE *f)
+int fputc(int ch,FILE *f)		
 {
 	HAL_UART_Transmit (&huart2 ,(uint8_t *)&ch,1,HAL_MAX_DELAY );
 	return ch;
@@ -111,7 +111,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
    if(huart->Instance == USART1)
     {
         rxIndex++;
-        if(rxIndex < 2048)
+        if(rxIndex < 4096)
         {
             HAL_UART_Receive_IT(&huart1, &rxBuffer[rxIndex], 1);
         }

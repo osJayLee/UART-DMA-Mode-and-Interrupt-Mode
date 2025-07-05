@@ -29,9 +29,7 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-uint8_t getRxEndFlag(void);
-uint8_t* getRxBuf(void);
-void setRxEndFlag(uint8_t value);
+
 /* USER CODE END Includes */
 
 extern UART_HandleTypeDef huart1;
